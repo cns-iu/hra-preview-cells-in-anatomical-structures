@@ -5,9 +5,12 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class CellPointVisualizer : MonoBehaviour
 {
+    [Header("Data")]
+    [SerializeField] private string[] cellTypesToShow = new string[3];
     [SerializeField] int iteratorJump = 1;
     [SerializeField] private GameObject pre_cell;
     [SerializeField] private GameObject parent;
@@ -24,7 +27,8 @@ public class CellPointVisualizer : MonoBehaviour
     [SerializeField] Button button;
     [SerializeField] TMP_Text statusText;
     [SerializeField] TMP_Text sliderValueText;
-    [SerializeField] TMP_Text cellCountsText
+    [SerializeField]
+    TMP_Text cellCountsText
         ;
 
     // Start is called before the first frame update
@@ -90,7 +94,8 @@ public class CellPointVisualizer : MonoBehaviour
             {
                 cellCounts.Add(obj.GetComponent<CellData>().CellType, 1);
             }
-            else {
+            else
+            {
                 cellCounts[obj.GetComponent<CellData>().CellType] += 1;
             };
         }
@@ -101,7 +106,7 @@ public class CellPointVisualizer : MonoBehaviour
             cellCountsText.text += item.Key + ": " + item.Value + "\n";
 
         }
-       
+
     }
 
     List<Color> GetRandomColors()
@@ -121,12 +126,13 @@ public class CellPointVisualizer : MonoBehaviour
 
     void ReadCSV()
     {
-        using (var reader = new StreamReader("Assets/Data/" + filename + ".csv"))
+        using (var reader = new StreamReader("Assets/Data/RenalPyramids/" + filename + ".csv"))
         {
             while (!reader.EndOfStream)
             {
                 var line = reader.ReadLine();
                 if (line.Split(",")[0] == "tissue_block_id") continue;
+                if (!cellTypesToShow.Contains(line.Split(",")[3])) continue;
                 cells.Add(new Cell(
                     line.Split(",")[0],
                     line.Split(",")[1],
