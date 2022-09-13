@@ -40,6 +40,15 @@ public class CellPointVisualizer : MonoBehaviour
 
         CreateCells(iteratorJump);
         SetUpUI();
+
+    }
+
+    void GetCounts()
+    {
+        for (int i = 0; i < objects.Count; i++)
+        {
+            CellData data = objects[i].GetComponent<CellData>();
+        }
     }
 
     void SetUpUI()
@@ -86,8 +95,8 @@ public class CellPointVisualizer : MonoBehaviour
             cell.transform.GetComponentInChildren<SpriteRenderer>().color = cellColor;
             counter++;
             objects.Add(cell);
-        }
 
+        }
         foreach (var obj in objects)
         {
             if (!cellCounts.ContainsKey(obj.GetComponent<CellData>().CellType))
@@ -120,13 +129,14 @@ public class CellPointVisualizer : MonoBehaviour
             uniqueCellTypes.Add(toAdd);
             colors.Add(new Color(UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(0f, 1f), .6f));
             colorKey.Add(toAdd, colors[colors.Count - 1]);
+            Debug.LogFormat("{0} has color: {1}", toAdd, colors[colors.Count - 1].ToString());
         }
         return colors;
     }
 
     void ReadCSV()
     {
-        using (var reader = new StreamReader("Assets/Data/RenalPyramids/" + filename + ".csv"))
+        using (var reader = new StreamReader("Assets/Data/Cortex/" + filename + ".csv"))
         {
             while (!reader.EndOfStream)
             {

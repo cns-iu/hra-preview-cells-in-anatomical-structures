@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7553449268487526338}
   - component: {fileID: 8420963236745566282}
-  - component: {fileID: -3717762508123977192}
   m_Layer: 0
   m_Name: Cell
   m_TagString: Untagged
@@ -27,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 4540592757036627639}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.07202618, y: 0.24752311, z: -0.099667974}
-  m_LocalScale: {x: 0.00001, y: 0.00001, z: 0.00001}
+  m_LocalScale: {x: 0.00005, y: 0.00005, z: 0.00005}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3134415670018561634}
@@ -44,18 +43,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8748959eff0ac41458f2924b6b14d848, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-3717762508123977192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4540592757036627639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 807c511c82403a441a925935b7de7ae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7751049672534298829
@@ -132,7 +119,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fac1a37cc677e324fb1a82b66654803d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9343457, g: 1, b: 0.21226418, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
