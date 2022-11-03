@@ -1576,7 +1576,7 @@ MonoBehaviour:
   - Cortical Collecting Duct Principal
   - Cortical Collecting Duct Intercalated Type A
   - Descending Vasa Recta Endothelial
-  iteratorJump: 1
+  iteratorJump: 3
   pre_cell: {fileID: 4540592757036627639, guid: cfcbc1b4a5039194ca6cea6a20985aa5, type: 3}
   parent: {fileID: 1107452079}
   filename: cells_HBM688.FLJB.475
